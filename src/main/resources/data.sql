@@ -1,0 +1,1 @@
+insert into planeta VALUES (1,'Terra',22.50);
