@@ -51,7 +51,7 @@
 			<scope>test</scope>
 		</dependency>
 
-	<!-- Dependência UnderTow -->
+		<!-- Dependência UnderTow -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -64,7 +64,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
 		</dependency>
 
 

@@ -9,4 +9,6 @@ public class SpaceinfoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpaceinfoApplication.class, args);
 	}
+	
+	
 }
