@@ -15,12 +15,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.ToString;
-
 @Entity
 @Table(name="PLANETA")
 @SequenceGenerator(name = "PLANETA_SEQ", sequenceName = "PLANETA_SEQ") 
-@ToString(of="nome")
 public class Planeta implements Serializable {
 
 	private static final long serialVersionUID = -1211583375062691226L;
