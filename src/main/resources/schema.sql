@@ -1,6 +1,3 @@
-DROP TABLE planeta;
-DROP TABLE lua;
-
 create TABLE planeta
 (
    id             number(18) primary key,
