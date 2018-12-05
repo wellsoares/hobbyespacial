@@ -1,8 +1,10 @@
 package br.com.hobbyespacial.spaceinfo.services;
 
-import br.com.hobbyespacial.spaceinfo.entidades.Planeta;
+import br.com.hobbyespacial.response.PlanetaResponse;
 
 public interface PlanetaService {
 
-	public Planeta findById(Long id);
+	public PlanetaResponse findById(Long id);
+	
+	public boolean salvar(PlanetaResponse planeta);
 }

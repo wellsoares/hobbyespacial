@@ -15,15 +15,18 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="LUA")
-@SequenceGenerator(name = "PLANETA_SEQ", sequenceName = "PLANETA_SEQ") 
+@SequenceGenerator(name = "LUA_SEQ", sequenceName = "LUA_SEQ") 
 public class Lua implements Serializable{
 
 	private static final long serialVersionUID = -5866138032428771608L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PLANETA_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LUA_SEQ")
 	private Long id;
 	private String nome;
 	private BigDecimal diametro;
+	
+	
+	
 
 }

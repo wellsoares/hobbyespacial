@@ -1,16 +1,17 @@
-package br.com.hobbyespacial.spaceinfo;
+package br.com.hobbyespacial.recursos;
 
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.hobbyespacial.response.PlanetaResponse;
 import br.com.hobbyespacial.spaceinfo.entidades.Planeta;
 import br.com.hobbyespacial.spaceinfo.services.PlanetaService;
 
@@ -22,18 +23,20 @@ public class PlanetaController {
 	private PlanetaService planetaService;
 
 	@PostMapping(path = "/{id}")
-	public ResponseEntity<Planeta> findById(@PathVariable(name = "id") Long id) {
-		Planeta planeta = planetaService.findById(id);
+	public ResponseEntity<PlanetaResponse> findById(@PathVariable(name = "id") Long id) {
+		PlanetaResponse planeta = planetaService.findById(id);
 		if (Objects.isNull(planeta)) {
-			return new ResponseEntity<Planeta>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<PlanetaResponse>(HttpStatus.NO_CONTENT);
 		}
-		return new ResponseEntity<Planeta>(planeta, HttpStatus.OK);
+		return new ResponseEntity<PlanetaResponse>(planeta, HttpStatus.OK);
 	}
-
-	@GetMapping(path = "/todos")
-	public Planeta findById() {
-		Planeta planeta = new Planeta();
-		planeta.setId(10L);
-		return planeta;
+	
+	@PostMapping("/salvar")
+	public ResponseEntity<PlanetaResponse> salvar(@RequestBody PlanetaResponse planetaResponse) {
+		boolean status = planetaService.salvar(planetaResponse);
+		if(status) {
+			return new ResponseEntity<PlanetaResponse>(HttpStatus.OK);
+		}
+		return new ResponseEntity<PlanetaResponse>(HttpStatus.BAD_REQUEST);
 	}
 }
