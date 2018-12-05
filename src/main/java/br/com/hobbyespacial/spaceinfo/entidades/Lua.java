@@ -10,10 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.Data;
-
 @Entity
-@Data
 @Table(name="LUA")
 @SequenceGenerator(name = "LUA_SEQ", sequenceName = "LUA_SEQ") 
 public class Lua implements Serializable{
@@ -26,7 +23,22 @@ public class Lua implements Serializable{
 	private String nome;
 	private BigDecimal diametro;
 	
-	
-	
-
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public BigDecimal getDiametro() {
+		return diametro;
+	}
+	public void setDiametro(BigDecimal diametro) {
+		this.diametro = diametro;
+	}
 }

@@ -1,7 +1,12 @@
 package br.com.hobbyespacial.spaceinfo.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.hobbyespacial.response.PlanetaResponse;
@@ -34,5 +39,20 @@ public class PlanetaServiceImpl implements PlanetaService {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	@Override
+	public List<PlanetaResponse> listarTodos(Pageable page) {
+		Page<Planeta> pagePlanetas = planetaRepositorio.findAll(page);
+		List<Planeta> planetas = pagePlanetas.getContent();
+		List<PlanetaResponse> planetasResponses = new ArrayList<>();
+		
+		planetas.forEach(p -> {
+			PlanetaResponse pr = new PlanetaResponse();
+			BeanUtils.copyProperties(p,pr);
+			planetasResponses.add(pr);
+		});
+		
+		return planetasResponses;
 	}
 }
