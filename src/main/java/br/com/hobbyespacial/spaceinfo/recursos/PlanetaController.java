@@ -1,4 +1,4 @@
-package br.com.hobbyespacial.recursos;
+package br.com.hobbyespacial.spaceinfo.recursos;
 
 import java.util.List;
 import java.util.Objects;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.hobbyespacial.response.PlanetaResponse;
+import br.com.hobbyespacial.spaceinfo.response.PlanetaResponse;
 import br.com.hobbyespacial.spaceinfo.services.PlanetaService;
 
 @RestController

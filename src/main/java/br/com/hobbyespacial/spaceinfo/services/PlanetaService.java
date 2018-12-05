@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Pageable;
 
-import br.com.hobbyespacial.response.PlanetaResponse;
+import br.com.hobbyespacial.spaceinfo.response.PlanetaResponse;
 
 public interface PlanetaService {
 
