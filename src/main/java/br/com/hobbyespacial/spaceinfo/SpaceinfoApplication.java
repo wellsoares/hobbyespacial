@@ -15,27 +15,27 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 @SpringBootApplication
-@ComponentScan(basePackages="br.com.hobbyespacial")
+@ComponentScan(basePackages = "br.com.hobbyespacial")
 @EnableJms
 public class SpaceinfoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpaceinfoApplication.class, args);
 	}
-	
-	 @Bean
-	    public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
-	                                                    DefaultJmsListenerContainerFactoryConfigurer configurer) {
-	        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-	        configurer.configure(factory, connectionFactory);
-	        return factory;
-	    }
-	 
-	   @Bean
-	    public MessageConverter jacksonJmsMessageConverter() {
-	        MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
-	        converter.setTargetType(MessageType.TEXT);
-	        converter.setTypeIdPropertyName("_type");
-	        return converter;
-	    }
+
+	@Bean
+	public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
+			DefaultJmsListenerContainerFactoryConfigurer configurer) {
+		DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+		configurer.configure(factory, connectionFactory);
+		return factory;
+	}
+
+	@Bean
+	public MessageConverter jacksonJmsMessageConverter() {
+		MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
+		converter.setTargetType(MessageType.TEXT);
+		converter.setTypeIdPropertyName("_type");
+		return converter;
+	}
 }

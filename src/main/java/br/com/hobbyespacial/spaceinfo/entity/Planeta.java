@@ -27,6 +27,10 @@ public class Planeta implements Serializable {
 	private Long id;
 	private String nome;
 	private BigDecimal diametro;
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "id_planeta")
+	private List<Lua> luas = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -59,8 +63,4 @@ public class Planeta implements Serializable {
 	public void setLuas(List<Lua> luas) {
 		this.luas = luas;
 	}
-
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "id_planeta")
-	private List<Lua> luas = new ArrayList<>();
 }

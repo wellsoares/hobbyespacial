@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.hobbyespacial.spaceinfo.entity.Planeta;
 import br.com.hobbyespacial.spaceinfo.repository.PlanetaRepository;
@@ -20,11 +21,11 @@ public class PlanetaServiceImpl implements PlanetaService {
 	private PlanetaRepository planetaRepositorio;
 
 	@Override
+	@Transactional
 	public PlanetaResponse findById(Long id) {
 		PlanetaResponse planetaResponse = new PlanetaResponse();
 		Planeta planeta = planetaRepositorio.findById(id).get();
-
-		BeanUtils.copyProperties(planeta, planetaResponse);
+		BeanUtils.copyProperties(planeta, planetaResponse, "luas");
 		return planetaResponse;
 	}
 
@@ -32,7 +33,7 @@ public class PlanetaServiceImpl implements PlanetaService {
 	public boolean salvar(PlanetaResponse planetaResponse) {
 		try {
 			Planeta planeta = new Planeta();
-			BeanUtils.copyProperties(planetaResponse, planeta);
+			BeanUtils.copyProperties(planetaResponse, planeta,"luas");
 			planetaRepositorio.save(planeta);
 			return true;
 		} catch (Exception e) {
@@ -49,7 +50,7 @@ public class PlanetaServiceImpl implements PlanetaService {
 		
 		planetas.forEach(p -> {
 			PlanetaResponse pr = new PlanetaResponse();
-			BeanUtils.copyProperties(p,pr);
+			BeanUtils.copyProperties(p,pr,"luas");
 			planetasResponses.add(pr);
 		});
 		
