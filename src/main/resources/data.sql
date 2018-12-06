@@ -9,4 +9,4 @@ insert into planeta VALUES ((SELECT PLANETA_SEQ.nextval FROM DUAL),'Marte',22.50
 
 insert into planeta VALUES (999999,'TESTE',22.50);
 
-insert into lua VALUES (999999,SELECT MAX(ID) FROM planeta,'TESTE LUA',11.500);
+insert into lua VALUES (999999,(SELECT MAX(ID) FROM planeta),'TESTE LUA',11.500);
