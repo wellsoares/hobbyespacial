@@ -1,4 +1,4 @@
-package br.com.hobbyespacial.spaceinfo.entidades;
+package br.com.hobbyespacial.spaceinfo.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

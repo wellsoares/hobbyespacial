@@ -9,15 +9,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import br.com.hobbyespacial.spaceinfo.entidades.Planeta;
+import br.com.hobbyespacial.spaceinfo.entity.Planeta;
+import br.com.hobbyespacial.spaceinfo.repository.PlanetaRepository;
 import br.com.hobbyespacial.spaceinfo.response.PlanetaResponse;
-import br.com.hobbyespacial.spaceinfo.respositorios.PlanetaRepositorio;
 
 @Service
 public class PlanetaServiceImpl implements PlanetaService {
 
 	@Autowired
-	private PlanetaRepositorio planetaRepositorio;
+	private PlanetaRepository planetaRepositorio;
 
 	@Override
 	public PlanetaResponse findById(Long id) {

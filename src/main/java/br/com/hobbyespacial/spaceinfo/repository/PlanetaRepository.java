@@ -1,12 +1,12 @@
-package br.com.hobbyespacial.spaceinfo.respositorios;
+package br.com.hobbyespacial.spaceinfo.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.hobbyespacial.spaceinfo.entidades.Planeta;
+import br.com.hobbyespacial.spaceinfo.entity.Planeta;
 
 @Repository
-public interface PlanetaRepositorio extends PagingAndSortingRepository<Planeta, Long> {
+public interface PlanetaRepository extends PagingAndSortingRepository<Planeta, Long> {
 
 	
 }

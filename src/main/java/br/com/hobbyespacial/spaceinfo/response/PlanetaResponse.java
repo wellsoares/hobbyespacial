@@ -41,4 +41,8 @@ public class PlanetaResponse implements Serializable{
 	public void setLuas(List<LuaResponse> luas) {
 		this.luas = luas;
 	}
+	@Override
+	public String toString() {
+		return "PlanetaResponse [id=" + id + ", nome=" + nome + ", diametro=" + diametro + "]";
+	}
 }
