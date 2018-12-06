@@ -21,7 +21,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("br.com.hobbyespacial.spaceinfo.recursos"))
+				.apis(RequestHandlerSelectors.basePackage("br.com.hobbyespacial.spaceinfo.resources"))
 				.paths(PathSelectors.ant("/planeta.*")).build().apiInfo(apiInfo());
 	}
 

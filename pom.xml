@@ -69,13 +69,13 @@
 		</dependency>
 
 
-		<!-- Dependência TomCat --><dependency> <groupId>org.springframework.boot</groupId> 
+		<!-- Dependência TomCat <dependency> <groupId>org.springframework.boot</groupId> 
 			<artifactId>spring-boot-starter-web</artifactId> </dependency> <dependency> 
 			<groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
-			</dependency> 
+			</dependency> -->
 			
 			
-					<!-- Dependência UnderTow 
+					<!-- Dependência UnderTow -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -89,7 +89,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
-		</dependency>-->
+		</dependency>
 	</dependencies>
 
 	<build>
